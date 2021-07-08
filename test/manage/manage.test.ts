@@ -15,7 +15,7 @@ const run = (fixture: string, args: string[]) => {
 beforeEach(() => removeSync(TEST_DIR));
 
 it("Should output the translation files in a directory when using the --out-dir option.", () => {
-  run("base", ["-l", "en,es", "-d", "locales", "./**/*.{ts,tsx}", "./**/*.js"]);
+  run("base", ["-l", "en,es", "-d", "locales", "./**/*.{ts,tsx}", "'./**/*.js'"]);
 
   for (const code of ["en", "es"]) {
     expect(readJSONSync(path.join(TEST_DIR, "locales", `${code}.json`))).toMatchSnapshot();
@@ -23,7 +23,7 @@ it("Should output the translation files in a directory when using the --out-dir 
 });
 
 it("Should output the translation files in a single file when using the --out-file option.", () => {
-  run("base", ["-l", "en,es", "-f", "locales.json", "./**/*.{ts,tsx}", "./**/*.js"]);
+  run("base", ["-l", "en,es", "-f", "locales.json", "'./**/*.{ts,tsx}'", "'./**/*.js'"]);
 
   expect(readJSONSync(path.join(TEST_DIR, "locales.json"))).toMatchSnapshot();
 });
@@ -61,7 +61,7 @@ it("Should pass extraction options to babel-plugin-react-intl.", () => {
 });
 
 it("Should merge existing translations with the extracted messages.", () => {
-  run("changes", ["-l", "en,es", "-f", "locales.json", "./**/*.{js,ts,jsx,tsx}"]);
+  run("changes", ["-l", "en,es", "-f", "locales.json", "'./**/*.{js,ts,jsx,tsx}'"]);
   expect(readJSONSync(path.join(TEST_DIR, "locales.json"))).toMatchSnapshot();
 });
 

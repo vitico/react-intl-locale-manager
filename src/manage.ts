@@ -17,7 +17,7 @@ import {
 } from "./util";
 import { removeSync } from "fs-extra";
 
-export const manage = ({
+export const manage = async ({
   files = [],
   ignore = [],
   outFile,
@@ -67,12 +67,14 @@ export const manage = ({
     nextTranslations
   );
 
-  const translationOutput = ([
-    [chalk.black.bgGreen(` Added ${addedIds.length} keys: `), addedIds],
-    [chalk.black.bgMagenta(` Removed ${removedIds.length} keys: `), removedIds],
-    [chalk.black.bgCyan(` Added ${addedLocales.length} locales: `), addedLocales],
-    [chalk.black.bgMagenta(` Removed ${removedLocales.length} locales: `), removedLocales],
-  ] as [string, string[]][]).filter(([, items]) => !isEmpty(items));
+  const translationOutput = (
+    [
+      [chalk.black.bgGreen(` Added ${addedIds.length} keys: `), addedIds],
+      [chalk.black.bgMagenta(` Removed ${removedIds.length} keys: `), removedIds],
+      [chalk.black.bgCyan(` Added ${addedLocales.length} locales: `), addedLocales],
+      [chalk.black.bgMagenta(` Removed ${removedLocales.length} locales: `), removedLocales],
+    ] as [string, string[]][]
+  ).filter(([, items]) => !isEmpty(items));
 
   if (!isEmpty(translationOutput)) {
     translationOutput.forEach(([title, items]) => {

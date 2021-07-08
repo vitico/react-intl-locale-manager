@@ -34,7 +34,9 @@ export const manageCommand: CommandModule = {
       .option("l", {
         type: "string",
         alias: "languages",
-        coerce: (v: string) => v.split(",").filter(Boolean),
+        coerce: (v: string) => {
+          return v ? v.split(",").filter(Boolean) : [];
+        },
         describe: inlined`Comma-separated list of language codes to support. A translation will 
                           be generated and mantained for every code in this list.`,
       })
@@ -63,7 +65,9 @@ export const manageCommand: CommandModule = {
       })
       .option("additional-component-names", {
         type: "string",
-        coerce: (v: string) => v.split(",").filter(Boolean),
+        coerce: (v: string) => {
+          return v ? v.split(",").filter(Boolean) : [];
+        },
         describe: inlined`Comma-separated list of component names to extract messages from.
                           Note that default we check for the fact that 'FormattedMessage'
                           is imported from '--module-source-name' to make sure variable alias
