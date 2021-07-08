@@ -53,7 +53,6 @@ const createBabelOptions = (options?: IntlOptions): TransformOptions => ({
       formatjs,
       {
         ...options,
-        idInterpolationPattern: "",
         extractSourceLocation: true,
       },
     ],

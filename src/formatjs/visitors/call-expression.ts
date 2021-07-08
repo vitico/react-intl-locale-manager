@@ -123,13 +123,13 @@ export const visitor: VisitNodeFunction<PluginPass & State, t.CallExpression> = 
     properties
       .find(prop => {
         const keyProp = prop.get("key");
+        // keyProp.to
         return (
           keyProp.isIdentifier({ name: "description" }) ||
           keyProp.isStringLiteral({ value: "description" })
         );
       })
       ?.remove();
-
     // Pre-parse or remove defaultMessage
     if (defaultMessageProp) {
       if (removeDefaultMessage) {

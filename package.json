@@ -1,9 +1,9 @@
 {
   "private": false,
-  "name": "react-intl-locale-manager",
-  "version": "1.1.8",
+  "name": "formatjs-locale-manager",
+  "version": "1.2.0",
   "description": "Manage the translation process of projects that use the 'react-intl' translation library.",
-  "repository": "https://github.com/murar8/react-intl-locale-manager",
+  "repository": "https://github.com/vitico/react-intl-locale-manager",
   "author": "Lorenzo Murarotto <lnzmrr@gmail.com>",
   "license": "MIT",
   "bin": {
@@ -30,9 +30,8 @@
   },
   "dependencies": {
     "@babel/core": "^7.14.6",
-    "@babel/plugin-syntax-jsx": "^7.14.5",
-    "@formatjs/cli": "^4.2.27",
-    "babel-plugin-formatjs": "^10.3.2",
+    "@babel/plugin-syntax-jsx": "7.14.5",
+    "babel-plugin-formatjs": "10.3.2",
     "babel-plugin-react-intl": "^7.1.0",
     "chalk": "^4.0.0",
     "fs-extra": "^10.0.0",
@@ -99,18 +98,11 @@
       "@semantic-release/commit-analyzer",
       "@semantic-release/release-notes-generator",
       "@semantic-release/changelog",
-      "@semantic-release/npm",
-      "@semantic-release/github",
-      [
-        "@semantic-release/git",
-        {
-          "assets": [
-            "README.md",
-            "CHANGELOG.md",
-            "package.json"
-          ]
-        }
-      ]
+      "@semantic-release/npm"
     ]
+  },
+  "publishConfig": {
+    "registry": "https://npm.homelab.vitico.space/",
+    "tag": "latest"
   }
 }

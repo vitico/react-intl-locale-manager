@@ -1,3 +1,17 @@
+# [1.2.0](https://github.com/vitico/react-intl-locale-manager/compare/v1.1.8...v1.2.0) (2021-07-08)
+
+
+### Features
+
+* **formatjs:** add modified formatjs to work with new versions ([8908095](https://github.com/vitico/react-intl-locale-manager/commit/890809515c12befaa03adb257aa302cdc1410120))
+
+# [1.2.0](https://github.com/vitico/react-intl-locale-manager/compare/v1.1.8...v1.2.0) (2021-07-08)
+
+
+### Features
+
+* **formatjs:** add modified formatjs to work with new versions ([8908095](https://github.com/vitico/react-intl-locale-manager/commit/890809515c12befaa03adb257aa302cdc1410120))
+
 ## [1.1.8](https://github.com/murar8/react-intl-locale-manager/compare/v1.1.7...v1.1.8) (2020-04-11)
 
 

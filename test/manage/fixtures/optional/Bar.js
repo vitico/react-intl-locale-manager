@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { defineMessages, FormattedMessage, useIntl } from "intl";
+import { useIntl } from "intl";
 export * as ns from "mod";
 
 const FormattedDummy1 = () => <></>;
@@ -7,7 +7,7 @@ const FormattedDummy2 = () => <></>;
 
 export const Bar = () => {
   const intl = useIntl();
-  const message = intl.formatMessage({ id: "message1" });
+  const message = intl.formatMessage({ id: "message1", defaultMessage: "mess" });
 
   return (
     <div>
